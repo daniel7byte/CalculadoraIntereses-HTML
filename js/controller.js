@@ -12,6 +12,7 @@ $( document ).ready(function() {
     $('#input_date').change(function() {
         var days = daysBetweenDates(); // Funcion que calcula la diferencia entre dos fechas
         $('#description_date_range').text(days + ' días'); // imprime en el div
+        calculate();
     });
 
     // Esta funcion toma la fecha actual y la fecha que el usuario eligió en el campo, así sabrá dentro de cuantos días se hará el pago
@@ -28,21 +29,63 @@ $( document ).ready(function() {
     // Cuando cambie el range
     $('#range_number').change(function(){
         $('#input_number').val($(this).val());
-        console.log($(this).val());
+        calculate();
+        // console.log($(this).val());
     });
 
     // Cuando cambie el campo
     $('#input_number').change(function(){
         $('#range_number').val($(this).val());
-        console.log($(this).val());
+        calculate();
+        // console.log($(this).val());
     });
+
+    // Constantes para calculo
+    const interes = 0.015;
+    const administracion = 0.08;
+    const tecnologia = 0.13;
+    const iva = 0.00399;
+    const seguro = 0;
 
     // Calculo de valores
     function calculate() {
+        var number = Number($('#input_number').val());
+        $('#show_number').text(formatMoney(number));
         
+        var cal_interes = number*interes;
+        $('#show_interes').text(formatMoney(cal_interes));
+        
+        var cal_seguro = number * seguro;
+        $('#show_seguro').text(formatMoney(cal_seguro));
+        
+        var cal_administracion = number*administracion;
+        $('#show_administracion').text(formatMoney(cal_administracion));
+
+        var subtotal = number+cal_interes+cal_administracion+cal_seguro;
+        $('#show_subtotal').text(formatMoney(subtotal));
+
+        var cal_tecnologia = number*tecnologia;
+        $('#show_tecnologia').text(formatMoney(cal_tecnologia));
+
+        var cal_iva = number * iva;
+        $('#show_iva').text(formatMoney(cal_iva));
+
+        var total = subtotal+cal_tecnologia+cal_iva;
+        $('#show_total').text(formatMoney(total));
+    }
+
+    function formatMoney(number){
+        return '$' + (new Intl.NumberFormat().format(number));
+        
+        // return (new Intl.NumberFormat('es-CO', {
+        //     style: 'currency',
+        //     currency: 'COP',
+        //     maximumSignificantDigits: 4
+        // }).format(number));
     }
 
     // Funciones ejecutadas al terminar la carga del DOM
     daysBetweenDates();
+    calculate();
 });
         

@@ -114,7 +114,7 @@
                     <div class="input-field col s12">
                       <input placeholder="" id="input_number" type="number" class="validate" min="150000" max="1000000" step="10000" value="500000">
                       <label for="first_name">¿Cuánto dinero necesitas?</label>
-                      <span class="helper-text" data-error="Ingrese un valor dentro del rango">Ingrese multiplos de $10.000</span>
+                      <span class="helper-text" data-error="Ingrese un valor dentro del rango de $150,000 a $1,000,000, y multiplo de $10.000">Ingrese multiplos de $10.000</span>
                     </div>
                   </div>
                   <p class="range-field">
@@ -150,16 +150,16 @@
                 <div class="col s6" style="text-align: right;">
                   Valor solicitado
                 </div>
-                <div class="col s6" id="show_number">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_number" style="font-weight: bold;" class="teal-text">$0</span>
                 </div>
               </div>
               <div class="row margin-zero">
                 <div class="col s6" style="text-align: right;">
                   Interés
                 </div>
-                <div class="col s6" id="show_">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_interes">$0</span>
                   <span class="badge">
                     <a class="tooltipped" data-position="left" data-tooltip="<div class='tooltip-content'>De acuerdo con el cambio de metodología implementada para el efecto, las autoridades nacionales certifican la tasa máxima que puede ser cobrada por las obligaciones crediticias mensualmente. Para el mes de enero de 2020 te informamos que la tasa es 28,16% E.A. (efectiva anual).</div>">
                       <i class="material-icons teal-text">info_outline</i>
@@ -171,8 +171,8 @@
                 <div class="col s6" style="text-align: right;">
                   Seguro
                 </div>
-                <div class="col s6" id="show_">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_seguro">$0</span>
                   <span class="badge">
                     <a class="tooltipped" data-position="left" data-tooltip="<div class='tooltip-content'>Póliza de aseguramiento sobre el valor del crédito en caso de muerte o incapacidad total del titular.<br><br>Si cuentas con un seguro que cubra este tipo de obligaciones puedes utilizarlo con nosotros.</div>">
                       <i class="material-icons teal-text">info_outline</i>
@@ -184,8 +184,8 @@
                 <div class="col s6" style="text-align: right;">
                   Administración
                 </div>
-                <div class="col s6" id="show_">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_administracion">$0</span>
                   <span class="badge">
                     <a class="tooltipped" data-position="left" data-tooltip="<div class='tooltip-content'>Asociado a la disponibilidad del cupo de crédito. Este valor se cancela cada 30 días mientras tenga uno ó más créditos activos.</div>">
                       <i class="material-icons teal-text">info_outline</i>
@@ -195,20 +195,20 @@
               </div>
               <div class="divider"></div>
               <br>
-              <div class="row margin-zero">
+              <div class="row margin-zero" style="font-weight: bold;">
                 <div class="col s6" style="text-align: right;">
                   Sub Total
                 </div>
-                <div class="col s6" style="text-align: left;" id="show_">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_subtotal">$0</span>
                 </div>
               </div>
               <div class="row margin-zero">
                 <div class="col s6" style="text-align: right;">
                   Tecnología
                 </div>
-                <div class="col s6" style="text-align: left;" id="show_">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_tecnologia">$0</span>
                   <span class="badge">
                     <a class="tooltipped" data-position="left" data-tooltip="<div class='tooltip-content'><strong>Cargo opcional</strong> que te permite acceder a la plataforma desde la comodidad de tu casa, sin trámites físicos, papeleos y filas. Para ser exento de este cargo, puedes hacer tu solicitud de manera física y no contarás con acceso a la plataforma virtual.</div>">
                       <i class="material-icons teal-text">info_outline</i>
@@ -220,8 +220,8 @@
                 <div class="col s6" style="text-align: right;">
                   IVA
                 </div>
-                <div class="col s6" id="show_">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_iva">$0</span>
                 </div>
               </div>
               <div class="divider"></div>
@@ -230,8 +230,8 @@
                 <div class="col s6" style="text-align: right;">
                   TOTAL
                 </div>
-                <div class="col s6" id="show_">
-                  $12.122
+                <div class="col s6">
+                  <span id="show_total">$0</span>
                 </div>
               </div>
               
