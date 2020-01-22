@@ -55,7 +55,7 @@ $( document ).ready(function() {
         var cal_interes = number*interes;
         $('#show_interes').text(formatMoney(cal_interes));
         
-        var cal_seguro = number * seguro;
+        var cal_seguro = number*seguro;
         $('#show_seguro').text(formatMoney(cal_seguro));
         
         var cal_administracion = number*administracion;
@@ -67,21 +67,16 @@ $( document ).ready(function() {
         var cal_tecnologia = number*tecnologia;
         $('#show_tecnologia').text(formatMoney(cal_tecnologia));
 
-        var cal_iva = number * iva;
+        var cal_iva = number*iva;
         $('#show_iva').text(formatMoney(cal_iva));
 
         var total = subtotal+cal_tecnologia+cal_iva;
         $('#show_total').text(formatMoney(total));
     }
 
+    // Convierte los numeros a un formato de moneda
     function formatMoney(number){
         return '$' + (new Intl.NumberFormat().format(number));
-        
-        // return (new Intl.NumberFormat('es-CO', {
-        //     style: 'currency',
-        //     currency: 'COP',
-        //     maximumSignificantDigits: 4
-        // }).format(number));
     }
 
     // Funciones ejecutadas al terminar la carga del DOM
