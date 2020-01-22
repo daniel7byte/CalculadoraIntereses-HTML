@@ -63,8 +63,11 @@ footer.page-footer {
   width: 100%;
 }
 
-tr td {
-  height: 50px;
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
+.margin-zero {
+  margin-bottom: 0px;
+}
+
+.tooltip-content {
+  max-width: 200px;
+  text-align: left;
 }
